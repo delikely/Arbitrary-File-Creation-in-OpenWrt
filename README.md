@@ -1,4 +1,3 @@
-# Arbitrary-File-Creation-in-OpenWrt
 ## Arbitrary File Creation in OpenWrt
 
 There is no restriction on the path of the system log file(`logread`),which lead to **overwritten important file**,such as /etc/passwd. if `/etc/passwd` was overwritened,it will cause a denial of service. when a router was infected, The only way to fix  is **Flash Firmware**.
@@ -34,7 +33,7 @@ start_service_file()
 
 In System -> logging page,`System log buffer size`set to `1`KiB ,`Write system log to file` set to `/etc/passwd`. At the end , clicking  "Save & Apply" button.
 
-![set value](images/image-20200110233312316.png)
+![set value](images/set%20logging%20parameter.png)
 
 
 
@@ -46,5 +45,5 @@ In order to produce some log to overwriten `/etc/passwd` , it need to reboot Ope
 
  Denial of service: the LuCi web page display "Dad Gateway". the same time , the internet was offline etc.
 
-![WEB DOS](images/image-20200110233616372.png)
+![WEB DOS](images/result%20DOS.png)
 
